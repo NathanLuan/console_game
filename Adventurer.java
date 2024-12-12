@@ -5,18 +5,20 @@ import java.util.Random;
 public abstract class Adventurer{
   private String name;
   private int HP,maxHP;
-
+  private boolean hasSpecial;
 
   /*There is no no-arg constructor. Be careful with your subclass constructors.*/
   
   public Adventurer(String name){
       this(name, 10);
+      hasSpecial = true;
   }
 
   public Adventurer(String name, int hp){
       this.name = name;
       this.HP = hp;
       this.maxHP = hp;
+      hasSpecial = true;
   }
 
   //concrete method written using abstract methods.
