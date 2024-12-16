@@ -4,21 +4,21 @@ import java.util.Random;
 
 public abstract class Adventurer{
   private String name;
-  private int HP,maxHP;
+  private int HP,maxHP,attackDMG;
   
   /*There is no no-arg constructor. Be careful with your subclass constructors.*/
   
   public Adventurer(String name){
-      this(name, 10);
+      this(name, 10, 10);
       
-        
+      
   }
 
-  public Adventurer(String name, int hp){
+  public Adventurer(String name, int hp, int attackDMG){
       this.name = name;
       this.HP = hp;
       this.maxHP = hp;
-
+      this.attackDMG = attackDMG;
   }
 
   //concrete method written using abstract methods.
@@ -59,12 +59,18 @@ public abstract class Adventurer{
 
   //hurt or hinder the target adventurer, consume some special resource
   public abstract String specialAttack(Adventurer other);
-
+  
   /*
     standard methods
   */
   public void applyDamage(int amount){
     this.HP -= amount;
+  }
+   public int getAttack(){
+     return attackDMG;
+  }
+   public void setAttack(int attackDMG){
+     this.attackDMG = attackDMG;
   }
 
   public boolean isAlive(){

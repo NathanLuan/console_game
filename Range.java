@@ -1,25 +1,14 @@
-public class Range extends Adventurer{
+public class Archer extends Adventurer{
     private int attackDMG;
     private int range;
     
-    public Range(String name, int hp){
+    public Range(String name, int hp, int range, int attackDMG){
         super(name, hp);
-        attackDMG = 0;
-        this.range = 0;
+        this.attackDMG = attackDMG;
+        this.range = range;
     }
     
-    public int getRange(){
-        return range;
-    }
-    public int getAttackDamage(){
-        return range;
-    }
-    public void setAttackDamage(int n){
-        this.attackDMG = n;
-    }
-    public void setRange(int n){
-        this.range = n;
-    }
+    
     public String specialAttack(Adventurer other){
         return "boop";
     }
