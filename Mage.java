@@ -1,14 +1,14 @@
 public class Mage extends Adventurer{
     private int heal;
- 
-    
-     
+
+
+
     public Mage(String name, int hp, int attackDMG, int heal){
         super(name, hp, attackDMG);
-        
+
         this.heal = heal;
     }
-    
+
     public String getSpecialName(){
         return "heal";
     }
@@ -19,21 +19,21 @@ public class Mage extends Adventurer{
     public void setSpecial(int n){
         this.heal = n;
     }
- 
-    
+
+
   /*
     all adventurers must have a way to attack enemies and
     support their allys
   */
       //hurt or hinder the target adventurer
       public String attack(Adventurer other){
-    
+
         other.applyDamage(this.getAttack());
         if(other.isAlive()){
             this.applyDamage(other.getAttack());
         }
         return "Your health: " + this.getHP() + "Opp's health: " + other.getHP();
-         
+
       }
 
       //hurt or hinder the target adventurer, consume some special resource
@@ -49,7 +49,7 @@ public class Mage extends Adventurer{
             other.setHP(other.getmaxHP());
             heal--;
             return "Yay you are healed";
-            
+
         } else {
             return "NO MORE HEALS";
         }
@@ -61,16 +61,16 @@ public class Mage extends Adventurer{
             this.setHP(this.getmaxHP());
             heal--;
             return "Yay i am healed";
-            
+
         } else {
             return "NO MORE HEALS";
         }
     }
-    
+
 
 
     public int getSpecialMax(){
         return 0;
     }
-    
+
 }
