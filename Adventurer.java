@@ -5,13 +5,13 @@ import java.util.Random;
 public abstract class Adventurer{
   private String name;
   private int HP,maxHP,attackDMG;
-  
+
   /*There is no no-arg constructor. Be careful with your subclass constructors.*/
-  
+
   public Adventurer(String name){
       this(name, 10, 10);
-      
-      
+
+
   }
 
   public Adventurer(String name, int hp, int attackDMG){
@@ -59,7 +59,7 @@ public abstract class Adventurer{
 
   //hurt or hinder the target adventurer, consume some special resource
   public abstract String specialAttack(Adventurer other);
-  
+
   /*
     standard methods
   */
