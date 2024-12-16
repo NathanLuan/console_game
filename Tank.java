@@ -1,14 +1,14 @@
 public class Tank extends Adventurer{
     private int buff;
- 
-    
-     
+
+
+
     public Tank(String name, int hp, int attackDMG, int buff){
         super(name, hp, attackDMG);
-        
+
         this.buff = buff;
     }
-    
+
     public String getSpecialName(){
         return "buff";
     }
@@ -19,21 +19,21 @@ public class Tank extends Adventurer{
     public void setSpecial(int n){
         this.buff = n;
     }
- 
-    
+
+
   /*
     all adventurers must have a way to attack enemies and
     support their allys
   */
       //hurt or hinder the target adventurer
       public String attack(Adventurer other){
-    
+
         other.applyDamage(this.getAttack());
         if(other.isAlive()){
             this.applyDamage(other.getAttack());
         }
         return "Your health: " + this.getHP() + "Opp's health: " + other.getHP();
-         
+
       }
 
       //hurt or hinder the target adventurer, consume some special resource
@@ -64,5 +64,5 @@ public class Tank extends Adventurer{
     public int getSpecialMax(){
         return 0;
     }
-    
+
 }
